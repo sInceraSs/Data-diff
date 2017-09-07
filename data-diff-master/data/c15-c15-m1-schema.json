@@ -1,0 +1,27 @@
+{
+    "schema":{
+       "ID":"ID",
+       "Case Number":"CaseNumber",
+       "Date":"Date",
+       "Block":"Block",
+       "IUCR":"",
+       "Primary Type":"PrimaryType",
+       "Description":"Description",
+       "Location Description":"LocationDescription",
+       "Arrest":"Arrest",
+       "Domestic":"Domestic",
+       "Beat":"Beat",
+       "District":"District",
+       "Ward":"Ward",
+       "Community Area":"CommunityArea",
+       "FBI Code":"",
+       "X Coordinate":"",
+       "Y Coordinate":"",
+       "Year":"Year",
+       "Updated On":"UpdatedOn",
+       "Latitude":"",
+       "Longitude":"",
+       "Location":""
+       },
+    "pk":"CaseNumber"
+}
