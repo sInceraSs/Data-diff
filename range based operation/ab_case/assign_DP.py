@@ -4,7 +4,13 @@ import numpy as np
 import pandas as pd
 
 def DP(l, r, theta):
+	"""
+	Test each k in [l, r] as split point to minimize (l, r, theta).
+	The cost of assigning tuples in [l, r] with tuples from B_old to B_new is 
+	just the same as # of operations about assigning the same value theta of tuples in B_new
+	"""
 	global dst
+	# dst is actually the col B which sorted by col A
 	min_, min_flag = float('inf'), 0
 	if l == r:
 		if theta not in dp[l][r]:
@@ -26,7 +32,7 @@ def DP(l, r, theta):
 			min_, min_flag = dp[l][r-1][theta], (l, r-1, theta)
 
 	if dst[l] not in dp[l+1][r]:
-		dp[l+1][r][ dst[i] ] = DP(l+1, r, dst[l])
+		dp[l+1][r][ dst[l] ] = DP(l+1, r, dst[l])
 	if min_ > dp[l+1][r][ dst[l] ] + 1:
 		min_, min_flag = dp[l+1][r][dst[l]] + 1, (l+1, r, dst[l])
 
@@ -48,7 +54,6 @@ def DP(l, r, theta):
 	return min_
 
 dst = [4, 4, 5, 6, 4, 4, 5]
-# dst is actually the col B which sorted by col A
 ans_op, dp = {}, {}
 op_res = []
 
